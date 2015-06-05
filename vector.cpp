@@ -47,6 +47,22 @@ Vector Vector::operator^ (const Vector& r) {
                   r_x * r.getY() - r_y * r.getX());
 }
 
+bool Vector::operator== (const Vector& r) {
+    return (lenght == r.getLenght()) && (r_x = r.getX()) && (r_y = r.getY()) && (r_z = r.getZ());
+}
+
+bool Vector::operator!= (const Vector& r) {
+    return !(*this == r);
+}
+
+bool Vector::isL (const Vector& r) {
+    return lenght != 0 && r.getLenght() != 0 && !((*this) * r)? true : false;
+}
+
+double Vector::dist(const Vector& r) {
+    return (*this - r).getLenght();
+}
+
 Vector Vector::norm() {
     double len = getLenght();
     if (len) {
@@ -57,6 +73,7 @@ Vector Vector::norm() {
 }
 
 //
+
 
 
 Vector operator* (double l, const Vector& r) {return Vector(l * r.getX(), l * r.getY(), l * r.getZ());}

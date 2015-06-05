@@ -23,17 +23,27 @@ public:
 
     Vector operator* (double);
 
-    double operator* (const Vector& r);
+    double operator* (const Vector&);
 
-    Vector operator+ (const Vector& r);
+    Vector operator+ (const Vector&);
 
-    Vector operator- (const Vector& r);
+    Vector operator- (const Vector&);
 
-    Vector operator^ (const Vector& r);
+    Vector operator^ (const Vector&);
+
+    bool operator== (const Vector&);
+
+    bool operator!= (const Vector&);
+
+    bool isL(const Vector&);
+
+    double dist(const Vector&);
 
     Vector norm();
 
 };
+
+
 
 Vector operator* (double, const Vector&);
 
