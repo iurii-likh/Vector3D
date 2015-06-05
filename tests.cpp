@@ -45,10 +45,89 @@ void test_scalar_multiplication() {
 }
 
 
+void test_addition() {
+
+    cout << "=== Addition ===" << endl;
+
+    Vector r0(0, 0, 0);
+
+    Vector r1(1, 1, 1);
+
+    Vector r2(5, 6, 7);
+
+    Vector r3(3, 1, 5);
+
+    cout << r0 << " + " << r2 << " = " << (r0 + r2) << " lenght: " << (r0+r2).getLenght() << endl;
+    cout << r1 << " + " << r3 << " = " << (r1 + r3) << " lenght: " << (r1+r3).getLenght() << endl;
+    cout << r2 << " + " << r3 << " = " << (r2 + r3) << " lenght: " << (r2+r3).getLenght() << endl;
+
+    cout << "================" << endl;
+}
+
+
+void test_substraction() {
+
+    cout << "=== Substraction ===" << endl;
+
+    Vector r0(0, 0, 0);
+
+    Vector r1(1, 1, 1);
+
+    Vector r2(5, 6, 7);
+
+    Vector r3(3, 1, 5);
+
+    cout << r0 << " - " << r2 << " = " << (r0 - r2) << " lenght: " << (r0-r2).getLenght() << endl;
+    cout << r1 << " - " << r3 << " = " << (r1 - r3) << " lenght: " << (r1-r3).getLenght() << endl;
+    cout << r2 << " - " << r3 << " = " << (r2 - r3) << " lenght: " << (r2-r3).getLenght() << endl;
+
+    cout << "====================" << endl;
+}
+
+void test_cross_multiplication() {
+    cout << "=== Cross multiplication ===" << endl;
+
+    Vector r1(5, 6, 7);
+
+    Vector r2(1, 2, 3);
+
+    cout <<r1 <<" x " <<r2 << " -> " << (r1^r2) << " lenght: " << (r1^r2).getLenght() << endl;
+
+    cout << "============================" << endl;
+}
+
+void test_norm(){
+
+    cout << "=== Norm ===" << endl;
+
+    Vector r0(0, 0, 0);
+
+    Vector r1(1, 1, 1);
+
+    Vector r2(4, 0, 0);
+
+    cout << r0 << " lenght: " << r0.getLenght() << " -> " << r0.norm() << " lenght: " << (r0.norm()).getLenght() << endl;
+
+    cout << r1 << " lenght: " << r1.getLenght() << " -> " << r1.norm() << " lenght: " << (r1.norm()).getLenght() << endl;
+
+    cout << r2 << " lenght: " << r2.getLenght() << " -> " << r2.norm() << " lenght: " << (r2.norm()).getLenght() << endl;
+
+    cout << "============" << endl;
+
+}
+
 void run_all_tests() {
 
     test_constructor_and_output();
 
     test_scalar_multiplication();
+
+    test_cross_multiplication();
+
+    test_addition();
+
+    test_substraction();
+
+    test_norm();
 
 }

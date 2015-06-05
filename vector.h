@@ -22,8 +22,16 @@ public:
     double getLenght() const;
 
     Vector operator* (double);
-    double operator* (const Vector& that);
 
+    double operator* (const Vector& r);
+
+    Vector operator+ (const Vector& r);
+
+    Vector operator- (const Vector& r);
+
+    Vector operator^ (const Vector& r);
+
+    Vector norm();
 
 };
 

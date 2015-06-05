@@ -30,11 +30,31 @@ double Vector::getZ() const {return r_z;}
 double Vector::getLenght() const {return lenght;}
 
 
+Vector Vector::operator* (double l) {return Vector(l * r_x, l * r_y, l * r_z);}
+
+
 double Vector::operator* (const Vector& r) {return r_x * r.getX() + r_y * r.getY() + r_z * r.getZ();}
 
 
-Vector Vector::operator* (double l) {return Vector(l * r_x, l * r_y, l * r_z);}
+Vector Vector::operator+ (const Vector& r) {return Vector(r_x + r.getX(), r_y + r.getY(), r_z + r.getZ());}
 
+
+Vector Vector::operator- (const Vector& r) {return Vector(r_x - r.getX(), r_y - r.getY(), r_z - r.getZ());}
+
+Vector Vector::operator^ (const Vector& r) {
+    return Vector(r_y * r.getZ() - r_z * r.getY(),
+                  r_z * r.getX() - r_x * r.getZ(),
+                  r_x * r.getY() - r_y * r.getX());
+}
+
+Vector Vector::norm() {
+    double len = getLenght();
+    if (len) {
+        return (*this) * (1/len);
+    } else {
+        return *this;
+    }
+}
 
 //
 
